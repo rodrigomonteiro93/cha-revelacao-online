@@ -1,0 +1,391 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baskervville';
+    font-weight: 400;
+    color: #4e5524;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+body.woman::before {
+    opacity: .7;
+    background: #fcdcdf;
+}
+
+body.man::before {
+    opacity: .7;
+    background: #e0e5e9;
+}
+
+body.woman button {
+    background: #fcdcdf;
+}
+
+body.man button {
+    background: #e0e5e9;
+}
+
+#flower-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 25vw;
+    max-height: 45vh;
+    animation: moveOnTopLeft 5s infinite;
+}
+
+#flower-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    max-width: 25vw;
+    max-height: 45vh;
+    animation: moveOnBottomRight 5s infinite;
+}
+
+#marker-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    max-width: 25vw;
+    max-height: 45vh;
+    animation: moveOnTopRight 10s infinite;
+}
+
+#line-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    max-width: 10vw;
+    max-height: 45vh;
+    z-index: 1;
+    animation: moveOnTopRightLine 10s infinite;
+}
+
+#marker-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    max-width: 12vw;
+    max-height: 45vh;
+    animation: moveOnBottomLeft 10s infinite;
+}
+
+#line-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 20vw;
+    max-height: 45vh;
+    z-index: -1;
+    animation: moveOnBottomLeftLine 10s infinite;
+}
+
+#cloud {
+    width: 700px;
+    max-width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#cloud > div {
+    border-radius: 20px;
+    background: white;
+    padding: 30px;
+}
+
+#cloud #box-initial{
+    float: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#cloud #box-counter.started {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    border-radius: 100%;
+    align-self: center;
+    background: rgb(238 238 238);
+    border: 1px solid #ccc7c7;
+}
+
+#cloud #box-response, #cloud #box-response-name {
+    display: flex;
+    flex-direction: column;
+    background: rgb(238 238 238);
+    border: 1px solid #ccc7c7;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+body.woman h1 {
+    color: rgb(227, 73, 99);
+}
+
+body.man h1 {
+    color: rgb(73, 104, 227);
+}
+
+#cloud #box-counter h1 {
+    font-size: 30px;
+}
+
+.container-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+button, .button {
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: #c5a585;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover, .button:hover {
+    background: #4e5524!important;
+    color: white;
+}
+
+.text {
+    margin-top: 20px;
+}
+
+.text p {
+    margin-top: 15px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+}
+
+.closed {
+    display: none!important;
+}
+
+#cloud #box-questions {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: rgb(238 238 238);
+    border: 1px solid #ccc7c7;
+}
+
+#cloud #box-questions .question {
+    display: flex;
+    flex-direction: column;
+}
+
+#cloud #box-questions .question ul {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+#cloud #box-questions .question ul li {
+    margin-top: 10px;
+    width: 48%;
+}
+
+#cloud #box-questions .question ul li a {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    font-weight: 800;
+    border: 1px solid black;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+#cloud #box-questions .question ul li a.man {
+    background: #e0e5e9;
+}
+
+#cloud #box-questions .question ul li a.woman {
+    background: #fcdcdf;
+}
+
+#cloud #box-questions .question ul li a:hover {
+    background: black;
+    color: white;
+}
+
+@keyframes moveOnTopLeft {
+    0% {
+        left: 0;
+        top: 0;
+        scale: 1;
+    }
+
+    50% {
+        left: -20px;
+        top: -20px;
+        scale: .999;
+        rotate: 2deg;
+    }
+    
+    100% {
+        left: 0;
+        top: 0;
+        scale: 1;
+    }
+}
+
+@keyframes moveOnTopRight {
+    0% {
+        right: 0;
+        top: 0;
+        scale: 1;
+    }
+
+    50% {
+        right: -20px;
+        top: -20px;
+        scale: .999;
+    }
+    
+    100% {
+        right: 0;
+        top: 0;
+        scale: 1;
+    }
+}
+
+@keyframes moveOnBottomRight {
+    0% {
+        right: 0;
+        bottom: 0;
+        scale: 1;
+        
+    }
+
+    50% {
+        right: -20px;
+        bottom: -20px;
+        scale: .999;
+        rotate: -2deg;
+    }
+    
+    100% {
+        right: 0;
+        bottom: 0;
+        scale: 1;
+    }
+}
+
+@keyframes moveOnBottomLeft {
+    0% {
+        left: 0;
+        bottom: 0;
+        scale: 1;
+        
+    }
+
+    50% {
+        left: -20px;
+        bottom: -20px;
+        scale: .999;
+    }
+    
+    100% {
+        left: 0;
+        bottom: 0;
+        scale: 1;
+    }
+}
+
+@keyframes moveOnTopRightLine {
+    0% {
+        right: 0;
+        top: 0;
+        rotate: 0;
+    }
+
+    50% {
+        right: -20px;
+        top: -20px;
+        rotate: -20deg;
+    }
+    
+    100% {
+        right: 0;
+        top: 0;
+        rotate: 0;
+    }
+}
+
+@keyframes moveOnBottomLeftLine
+{
+    0% {
+        left: 0;
+        bottom: 0;
+        rotate: 0;
+    }
+
+    50% {
+        left: -20px;
+        bottom: -20px;
+        rotate: 5deg;
+    }
+    
+    100% {
+        left: 0;
+        bottom: 0;
+        rotate: 0;
+    }
+}
