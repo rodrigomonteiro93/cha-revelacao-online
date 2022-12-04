@@ -128,7 +128,6 @@ body.man button {
 
 #cloud > div {
     border-radius: 20px;
-    background: white;
     padding: 30px;
 }
 
@@ -387,5 +386,19 @@ button:hover, .button:hover {
         left: 0;
         bottom: 0;
         rotate: 0;
+    }
+}
+
+
+@media (max-width: 1024px){
+    #flower-top-left,
+    #flower-bottom-right,
+    #line-bottom-left {
+        max-width: 45vw!important;
+    }
+    
+    #line-top-right,
+    #marker-bottom-left {
+        max-width: 30vw;
     }
 }
