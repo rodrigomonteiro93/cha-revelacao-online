@@ -2,12 +2,12 @@ const boxInitial = document.querySelector('#box-initial');
 const boxQuestions = document.querySelector('#box-questions');
 const boxCounter = document.querySelector('#box-counter');
 const boxResponse = document.querySelector('#box-response');
-const boxResponseName = document.querySelector('#box-response-name');
+//const boxResponseName = document.querySelector('#box-response-name');
 const buttonsResponse = document.querySelectorAll('.response');
 const counterElem = document.querySelector('#box-counter h1');
 
 const buttonsStart = document.querySelector('#box-initial button');
-const buttonsShowResponseName = document.querySelector('#box-response button');
+//const buttonsShowResponseName = document.querySelector('#box-response button');
 const buttonGossip = document.getElementById("gossip");
 
 const timerCounter = 1000;
@@ -18,7 +18,7 @@ let sexSelected = '';
 let dataBaby = {};
 
 buttonsStart.addEventListener('click', handleOpenBoxQuestionsSex);
-buttonsShowResponseName.addEventListener('click', handleOpenBoxResponseName);
+//buttonsShowResponseName.addEventListener('click', handleOpenBoxResponseName);
 buttonsResponse.forEach(button => button.addEventListener('click', setSexSelected));
 
 function handleOpenBoxQuestionsSex()
@@ -75,6 +75,8 @@ function handleOpenBoxResponse()
 
     document.body.classList.remove(...document.body.classList);
     //document.body.classList.add(dataBaby.class);
+    
+    buttonGossip.href = "https://api.whatsapp.com/send?text=" + encodeURIComponent(document.title + " " + window.location.href);
 
     document.querySelector('#box-response h1').innerHTML = getMessageResponse();
 }
@@ -106,7 +108,8 @@ function handleDataBaby()
         description: '<p>Significado “senhora soberana cujo Deus é juramento”, “senhora soberana para quem Deus é juramento”.</p>'
     }
 
-    dataBaby = window.location.hash === '#1' ? dataBabyMan : dataBabyWoman
+    //dataBaby = window.location.hash === '#1' ? dataBabyMan : dataBabyWoman
+    dataBaby = dataBabyWoman
 }
 
 function getMessageResponse()
@@ -115,8 +118,8 @@ function getMessageResponse()
         if (dataBaby.class === 'man') {
             
         }
-        return 'Uhuu... Você acertou o sexo do nosso bebe';
+        return 'Uhuu... Vamos ter uma menina!';
     }
 
-    return 'Vixe, voce errou desta vez... Quem sabe voce acerte no proximo?!';
+    return 'Vixe, você errou desta vez... Vamos ter uma menina! Quem sabe você acerte no proximo?!';
 }
